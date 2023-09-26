@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    listen [::]:80;
+    index index.html;
+    server_name localhost;
+
+    root /home/www/public_html;
+
+    location = /404.html {
+            internal;
+    }
+}
