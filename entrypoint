@@ -6,7 +6,7 @@ templates=$(ls /etc/nginx/template.d/*.template)
 for file in $templates; do
     if [ -f "$file" ]; then
         config_file="/etc/nginx/vhost.d/"$(basename "${file%.*}.conf")
-        envsubst < $file > $config_file
+        envsubst "$(printf '${%s} ' $(env | cut -d'=' -f1))" < $file > $config_file
     fi
 done
 
