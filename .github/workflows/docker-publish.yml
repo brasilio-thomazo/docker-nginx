@@ -1,4 +1,4 @@
-name: php-composer-build
+name: ngix-build
 on:
   push:
     branches: [ "main" ]
@@ -23,5 +23,5 @@ jobs:
           target: "nginx"
           push: true
           tags: |
-            devoptimus/nginx:0.0.1
+            devoptimus/nginx:0.0.2
             devoptimus/nginx:latest
